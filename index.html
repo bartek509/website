@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+<title> Strona edukacyjna </title>
+
+
+
+<script> 
+function strgl(){
+
+   d1 = document.getElementById("strgl");
+   d2 = document.getElementById("matma");
+   d3 = document.getElementById("polski");
+   d4 = document.getElementById("angielski");
+
+      d1.style.display = "block";
+      d2.style.display = "none";
+      d3.style.display = "none";
+      d4.style.display = "none";
+   
+}
+
+function matma(){
+
+   d1 = document.getElementById("strgl");
+   d2 = document.getElementById("matma");
+   d3 = document.getElementById("polski");
+   d4 = document.getElementById("angielski");
+
+      d1.style.display = "none";
+      d2.style.display = "block";
+      d3.style.display = "none";
+      d4.style.display = "none";
+   
+}
+
+
+function polski(){
+
+   d1 = document.getElementById("strgl");
+   d2 = document.getElementById("matma");
+   d3 = document.getElementById("polski");
+   d4 = document.getElementById("angielski");
+
+      d1.style.display = "none";
+      d2.style.display = "none";
+      d3.style.display = "block";
+      d4.style.display = "none";
+   
+}
+
+function angielski(){
+
+   d1 = document.getElementById("strgl");
+   d2 = document.getElementById("matma");
+   d3 = document.getElementById("polski");
+   d4 = document.getElementById("angielski");
+
+      d1.style.display = "none";
+      d2.style.display = "none";
+      d3.style.display = "none";
+      d4.style.display = "block";
+   
+}
+
+var c;
+
+						function poziom1(){
+			
+			 x = document.getElementById("content");
+		  a = Math.floor(Math.random() * 10) + 1;
+		  b = Math.floor(Math.random() * 10) + 1;
+			 c = a + b;
+			 var c1=c+1;
+			x.innerHTML = a + ' + ' + b + ' =  ?  Podpowiedź:' + c1 +'-1';
+			return c;
+		 }
+		 						function poziom2(){
+			
+			 x = document.getElementById("content");
+		 a = Math.floor(Math.random() * 100) + 1;
+		  b = Math.floor(Math.random() * 100) + 1;
+			 c = a + b;
+			 var c1=c+1;
+			x.innerHTML = a + ' + ' + b + ' =  ?  Podpowiedź:' + c1 +'-1';
+			return c;
+		 }
+		 
+		 						function poziom3(){
+			
+			 x = document.getElementById("content");
+		 a = Math.floor(Math.random() * 10) + 1;
+		  b = Math.floor(Math.random() * 10) + 1;
+			 c = a * b;
+			 var c1=c+1;
+			x.innerHTML = a + ' * ' + b + ' =  ?  Podpowiedź:' + c1 +'-1';
+			return c;
+		 }
+		 
+		 						function poziom4(){
+			
+			 x = document.getElementById("content");
+		 a = Math.floor(Math.random() * 100) + 1;
+		  b = Math.floor(Math.random() * 100) + 1;
+			 c = a * b;
+			 var c1=c+1;
+			x.innerHTML = a + ' * ' + b + ' =  ?  Podpowiedź:' + c1 +'-1';
+			return c;
+		 }
+
+		 
+
+	 	function zatwierdz(){
+			 var wynik = document.getElementById("result").value;
+			 
+			 if(wynik==c){
+				 document.getElementById("wynik").innerHTML = "<b>POPRAWNA ODPOWIEDŹ</b>";
+				 document.getElementById("wynik").style.color = "green";
+			 }
+			 else{
+				 document.getElementById("wynik").innerHTML = "<b>BŁĘDNA ODPOWIEDŹ</b>";
+				 document.getElementById("wynik").style.color = "red";
+			 }
+		 }
+		 
+</script>
+
+	
+
+
+
+</head>
+<body>
+
+<div class="header">
+  <h1 class="center">Podstawowe Ćwiczenia oraz Informacje</h1>
+</div>
+
+<div class="clearfix">
+  <div class="column menu">
+    <ul class="float">
+	<li id="demo" onclick="strgl()">Strona Główna </li>
+      <li id="demo1" onclick="matma()">Matematyka Ćwiczenia</li>
+      <li id="demo2" onclick="polski()">język polski Podstawy</li>
+      <li id="demo3" onclick="angielski()">język angielski Podstawy</li>
+
+    </ul>
+  </div>
+
+  <div class="container"> 
+  
+        <div class="strgl" id="strgl" >
+    <h1>Strona Główna</h1>
+	<p class="text">Strona zawiera ćwiczenia z dodawania oraz mnożenia w dwóch różnych poziomach trudności oraz informacje dotyczące języka polskiego oraz angielskiego</p>
+	</div>
+  
+  
+  <div class="matma" id="matma">
+    <h1>Matematyka</h1>
+	
+	<h2 class="center">Poziomy Trudności</h2>
+	<h3 class="center">Dodawanie</h3>
+	 <div id="level1" class="mbutton"><p  onclick="poziom1();">Poziom Pierwszy</p></div>
+	 <div id="level2" class="mbutton"><p  onclick="poziom2();">Poziom Drugi</p></div>
+	 <h3 class="center">Mnożenie</h3>
+	 <div id="level3" class="mbutton"><p  onclick="poziom3();">Poziom Pierwszy</p></div>
+	 <div id="level4" class="mbutton"><p  onclick="poziom4();">Poziom Drugi</p></div>
+	 
+   <div id="content" class="mtext"></div> 
+ <input type="text" id="result" class="m3text" placeholder="wynik?" >
+  <input type="button" value="zatwierdź" onclick="zatwierdz();" class="m4text">
+  <p id="wynik" class="m2text"></p>
+</div>
+  
+    <div class="polski" id="polski">
+    <h1>Język Polski</h1>
+	<p class = "text"> język naturalny należący do grupy języków zachodniosłowiańskich (do której należą również czeski, słowacki, kaszubski, dolnołużycki, górnołużycki i wymarły połabski), stanowiącej część rodziny języków indoeuropejskich. Polszczyzna jest jednym z oficjalnych języków Unii Europejskiej.
+
+Ocenia się, że język polski jest językiem ojczystym około 44 milionów ludzi na świecie (w literaturze naukowej można spotkać szacunki od 39 do 48 milionów), mieszkańców Polski oraz tzw. Polonii, czyli Polaków zamieszkałych za granicą. Język polski ma obecnie największą liczbę użytkowników wśród przedstawicieli słowiańszczyzny zachodniej i jest drugim językiem słowiańskim pod względem powszechności używania.
+
+Spośród głównych języków słowiańskich polszczyzna wykazuje najbliższe pokrewieństwo ze słowackim i czeskim, ale dzieli również wiele cech z językiem ukraińskim ze względu na długotrwały kontakt obu języków. Na język polski duży wpływ wywarły również języki germańskie, zwłaszcza niemiecki, oraz italskie, takie jak łacina i francuski, które rzutowały na kształt polskiego zasobu słownego i systemu gramatycznego </p>
+		</div>
+
+    <div class="angielski" id="angielski">
+    <h1>Język Angielski</h1>
+	<p class = "text"> język z grupy zachodniej rodziny języków germańskich, powszechnie używany w Wielkiej Brytanii, jej terytoriach zależnych oraz w wielu byłych koloniach i dominiach, m.in. Stanach Zjednoczonych, Irlandii, Kanadzie, RPA, Australii i Nowej Zelandii. Pełni funkcję języka oficjalnego bądź półoficjalnego w ponad 60 krajach.
+
+W Wielkiej Brytanii, Stanach Zjednoczonych i Australii angielski jest de facto językiem urzędowym, choć formalnie państwa te nie objęły takim statusem żadnego języka. Angielszczyzna należy do oficjalnych języków ONZ, a od XX wieku jest najczęściej używanym językiem w kontaktach międzynarodowych. Bywa określana jako pierwszy uniwersalny nowożytny język ludzkości. Stanowi prymarny język nauki, handlu i polityki, a w niektórych krajach także kształcenia wyższego.
+
+Angielszczyzna wykazuje silne zróżnicowanie na podłożu geograficznym i socjalnym. Dialekty angielskie częściowo różnią się fonetyką, słownictwem i gramatyką. Rolę instytucjonalnej normy porozumiewawczej pełni różnie definiowany dialekt ogólnoangielski (Standard English), występujący w różnych podwariantach narodowych. Język angielski jest obecnie źródłem zapożyczeń prawie na całym świecie, ale wcześniej to angielszczyzna ewoluowała pod wpływem innych języków.</p>
+	</div>
+</div>
+  
+
+ 
+  </div>
+
+
+<div class="footer">
+  <p>Wykonanie:Bartosz Ciszewski</p>
+</div>
+
+</body>
+</html>
